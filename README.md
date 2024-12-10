@@ -10,7 +10,7 @@
 Sample data files can be found in the `data` directory.
 
 ## REQUIREMENTS
-Requirements are minimal and can be installed using your preferred package manager.
+Requirements are minimal and can be installed using your preferred package manager:
 - `numpy`
 - `pandas`
 - `matplotlib`
@@ -27,6 +27,8 @@ To get the full batch of statistics (especially about song metadata), you will n
 
 **DIRECTORIES**
 - `data` holds the raw exported files from Music League. See [here](https://www.reddit.com/r/musicleague/comments/1e2idmt/now_available_to_music_league_subscribers_league/) for a brief summary of how to get these files.
+- `outputs` holds the three output files (`output_master.csv`, `output_submissions.csv`, and `output_votes.csv`).
+- `graphs` holds `seaborn` visualizations of the various output statistics.
 
 ## USE
 After installing the package requirements and exporting your league's data into the `data` directory, run the following to build the three output files:
@@ -42,10 +44,9 @@ python statistics.py
 ```
 
 If you have `spotipy` working, then run the following to get the full batch of statistics:
+
 ```
 python statistics.py -spot
-```
-```
 ```
 
 
