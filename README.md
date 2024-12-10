@@ -21,9 +21,9 @@ To get the full batch of statistics (especially about song metadata), you will n
 ## REPOSITORY ORGANIZATION
 - `organize.py` extracts information from the four main data files (see above) and builds:
   - `output_master.csv` --> The Massive Spreadsheet
-  - `output_submissions.csv` --> A re-organized version of `submissions.csv` for easier data analysis
-  - `output_votes.csv` --> A re-organized version of `votes.csv` for easier data analysis
-- `statistics.py` extracts many statistics (listed at the top of script) from `master.csv`, `output_submissions.csv`, and `output_votes.csv`.
+  - `output_submissions.csv` --> A re-organized version of `submissions.csv` for easier data analysis | [NOT IMPLEMENTED]
+  - `output_votes.csv` --> A re-organized version of `votes.csv` for easier data analysis | [NOT IMPLEMENTED]
+- `analyses.ipynb` extracts many statistics (listed at the top of script) from `master.csv`, `output_submissions.csv`, and `output_votes.csv`.
 
 **DIRECTORIES**
 - `data` holds the raw exported files from Music League. See [here](https://www.reddit.com/r/musicleague/comments/1e2idmt/now_available_to_music_league_subscribers_league/) for a brief summary of how to get these files.
@@ -37,23 +37,20 @@ After installing the package requirements and exporting your league's data into 
 python organize.py
 ```
 
-Then, to calculate statistics, run:
+Then, to calculate statistics, launch the Jupyter Notebook `analyses.ipynb` and run the cells that you want.
+
+
+If you have `spotipy` working, then run the following to get the full metadata for each song:
 
 ```
-python statistics.py 
+python organize.py -spot
 ```
-
-If you have `spotipy` working, then run the following to get the full batch of statistics:
-
-```
-python statistics.py -spot
-```
-
+And you can run the "spotipy analyses" at the end of `analyses.ipynb`.
 
 ## TO-DO:
-- Build `organize.py`
-  - Map Rounds and Participants to their corresponding IDs.
-  - Explode each submission to include rounds for ease of `.groupby()`.
+- `organize.py`
+  - Build `output_votes.csv` and `output_submissions.csv`
+  - Extract data with `spotipy` for songs
 
-- Build `statistics.py`
-  - Confer with Alyssa about statistics.
+- `analyses.ipynb`
+  - Song metadata analyses
